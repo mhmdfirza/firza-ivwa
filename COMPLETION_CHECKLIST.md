@@ -10,7 +10,7 @@ IVWA (Intentional Vulnerable Web Application) telah berhasil dibuat lengkap deng
 
 ### ✅ Core Application Files
 - [x] `index.php` - Welcome page dengan overview
-- [x] `login.php` - SQL Injection vulnerable login
+- [x] `login.p git remote add origin https://github.com/mhmdfirza/firza-ivwa.git` - SQL Injection vulnerable login
 - [x] `dashboard.php` - Stored XSS vulnerable comments
 - [x] `search.php` - Reflected XSS vulnerable search
 - [x] `logout.php` - Logout functionality
