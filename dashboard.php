@@ -95,9 +95,6 @@ $comments_result = $conn->query($comments_query);
                         <label for="comment_text">Comment:</label>
                         <textarea id="comment_text" name="comment_text" rows="4" 
                                   placeholder="Write your comment here..." required></textarea>
-                        <p style="font-size: 0.8em; color: #666;">
-                            💡 Tip: Coba input HTML atau JavaScript di sini!
-                        </p>
                     </div>
                     <button type="submit" class="btn btn-primary">Post Comment</button>
                 </form>
