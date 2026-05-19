@@ -12,15 +12,17 @@ Selamat! IVWA (Intentional Vulnerable Web Application) sudah siap untuk digunaka
 myOwn-ivwa/
 │
 ├── 📄 index.php                      ← Halaman utama / Welcome Page
-├── 📄 login.php                      ← Login (SQL Injection ⚠️)
+├── 📄 login.php                      ← Login (SQL Injection ⚠️) [Updated v1.1]
 ├── 📄 dashboard.php                  ← Dashboard (Stored XSS ⚠️)
 ├── 📄 search.php                     ← Search (Reflected XSS ⚠️)
 ├── 📄 logout.php                     ← Logout script
+├── 📄 test-db.php                    ← Database connection test [NEW v1.1]
 │
 ├── 📚 README.md                      ← Dokumentasi lengkap (BACA INI!)
 ├── 📚 INSTALLATION.md                ← Panduan instalasi step-by-step
 ├── 📚 QUICKSTART.md                  ← Quick start 5-minute setup
 ├── 📚 PAYLOADS.md                    ← Kumpulan payload & testing guide
+├── 📚 CHANGELOG.md                   ← Version history & updates [NEW v1.1]
 │
 ├── 📁 config/
 │   └── 📄 db.php                     ← Database configuration
@@ -50,13 +52,14 @@ myOwn-ivwa/
 
 ### Main Files
 
-| File | Purpose | Vulnerability |
-|------|---------|---|
-| `index.php` | Home page & documentation | None (educational) |
-| `login.php` | User authentication | **SQL Injection** |
-| `dashboard.php` | User dashboard & comments | **Stored XSS** |
-| `search.php` | Comment search | **Reflected XSS** |
-| `logout.php` | Logout functionality | None |
+| File | Purpose | Vulnerability | Status |
+|------|---------|---|---|
+| `index.php` | Home page & documentation | None (educational) | ✅ |
+| `login.php` | User authentication | **SQL Injection** | ✅ Updated v1.1 |
+| `dashboard.php` | User dashboard & comments | **Stored XSS** | ✅ |
+| `search.php` | Comment search | **Reflected XSS** | ✅ |
+| `logout.php` | Logout functionality | None | ✅ |
+| `test-db.php` | Database connection testing | None (utility) | 🆕 NEW v1.1 |
 
 ### Configuration Files
 

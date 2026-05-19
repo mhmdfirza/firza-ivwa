@@ -40,11 +40,13 @@ IVWA (Intentional Vulnerable Web Application) telah berhasil dibuat lengkap deng
 - [x] `QUICKSTART.md` - 5-minute quick start
 - [x] `PAYLOADS.md` - Payload examples & testing
 - [x] `PROJECT_STRUCTURE.md` - Project overview
+- [x] `CHANGELOG.md` - Version history & updates (v1.1)
 
 ### ✅ Setup & Automation
 - [x] `setup.sh` - Automated setup script
 - [x] Database import instructions
 - [x] Configuration setup
+- [x] `test-db.php` - Database connection testing utility (v1.1)
 
 ### ✅ Vulnerability Implementations
 - [x] **SQL Injection** - Raw SQL concatenation (login page)
@@ -68,10 +70,13 @@ mysql -u root < database/init.sql
 
 # 2. Start Web Server
 /opt/lampp/lampp start
+Test Database Connection (v1.1)
+php test-db.php
 
-# 3. Open Browser
+# 4. Open Browser
 http://localhost/myOwn-ivwa
 
+# 5
 # 4. Login
 Username: admin
 Password: password123
@@ -85,6 +90,7 @@ Password: password123
 |------|----------|-----------|
 | `QUICKSTART.md` | Getting started quickly | 5 min |
 | `README.md` | Complete understanding | 30 min |
+| `CHANGELOG.md` | Version history & changes | 10 min |
 | `INSTALLATION.md` | Detailed setup | 15 min |
 | `PAYLOADS.md` | Testing & exploitation | 20 min |
 | `PROJECT_STRUCTURE.md` | Project overview | 10 min |

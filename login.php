@@ -18,6 +18,11 @@
  * Karena '1'='1' selalu TRUE, query akan mengembalikan data user pertama (biasanya admin)
  */
 
+// Untuk debugging di environment lokal: tampilkan error agar tidak muncul HTTP 500 tanpa info
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 // Jika sudah login, redirect ke dashboard
@@ -48,22 +53,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $result = $conn->query($query);
     
-    if ($result && $result->num_rows > 0) {
-        // Login berhasil
+    // Check apakah query berhasil dijalankan
+    if ($result === FALSE) {
+        // Query error (SQL error)
+        $error_message = "Database error: " . $conn->error;
+    } elseif ($result->num_rows > 0) {
+        // Login berhasil - user ditemukan dengan password yang sesuai
         $user = $result->fetch_assoc();
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['full_name'] = $user['full_name'];
         
+        // Close connection sebelum redirect
+        $conn->close();
+        
         // Redirect ke dashboard
         header("Location: dashboard.php");
         exit();
     } else {
+        // Query berhasil tapi tidak ada hasil - password/username salah
         $error_message = "Username atau password salah!";
     }
-    
-    $conn->close();
 }
 ?>
 <!DOCTYPE html>
@@ -119,5 +130,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
     </div>
+    
+    <?php
+    // Close database connection jika masih terbuka
+    if (isset($conn) && is_object($conn)) {
+        $conn->close();
+    }
+    ?>
 </body>
 </html>
